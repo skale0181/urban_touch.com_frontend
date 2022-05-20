@@ -26,7 +26,9 @@ An e-commerce web site which deals with different types of cloth related product
 <h2>Home Page</h2>
 
 ![UrbanOutfitters](/images/touch_1.png)
+
 <h2>Signup Page</h2>
+
 ![UrbanOutfitters](/images/touch_signup.png)
 <h2>Login Page</h2>
 ![UrbanTouch.com](/images/touch_login.png)
