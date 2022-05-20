@@ -1,0 +1,58 @@
+.footer_div{
+    width: 100%;
+    height: auto;
+    background-color: rgb(249,246,242);
+    margin-top: 30px;
+}
+
+.upper_foot_div{
+    width: 100%;
+    display: flex;
+    /* align-items: center; */
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+
+.upper_foot_div>div{
+    margin-top: 30px;
+    width: 45%;
+    height: auto;
+    text-align: left;
+}
+.upper_foot_1>div{
+     font-size: small;
+     font-weight: 100;
+}
+.upper_foot_1>div:hover{
+    cursor: pointer;
+    color:darkgoldenrod;
+}
+.lower_foot_div{
+    margin-top: 30px;
+}
+
+.input_join{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    height: 60px;
+    border-radius: 3px;
+    padding: 10px;
+    border: 1px solid rgb(204, 204, 204);
+}
+.input_join>input{
+    width: 80%;
+    height: 100%;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    background-color: rgb(249,246,242);
+}
+.input_join>button{
+    border: 1px solid rgb(204, 204, 204);
+    border-radius: 3px;
+    padding: 10px;
+    background-color: rgb(240,236,233);
+}
