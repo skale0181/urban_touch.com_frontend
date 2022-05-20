@@ -1,0 +1,14 @@
+.App {
+  text-align: center;
+  font-family:  Helvetica, sans-serif, Courier,sans-serif;
+}
+.App::-webkit-scrollbar{
+  width: 0px;
+}
+
+.nav_bar{
+  position: sticky;
+  top: 0;
+  width: 100%;
+}
+
