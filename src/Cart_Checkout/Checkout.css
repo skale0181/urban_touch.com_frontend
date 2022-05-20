@@ -1,0 +1,86 @@
+.main_checkout{
+    margin: auto;
+    /* height: 900px; */
+}
+.form_div_1st{
+    margin: auto;
+    margin-top: 20px;
+    padding: 20px 0px 20px 0px;
+    /* border: 1px solid red; */
+    width: 70%;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+@media (max-width: 800px) {
+    .form_div_1st{
+        width: 90%;
+       }
+    
+}
+.form_div{
+    width: 90%;
+    /* border: 1px solid green; */
+    margin: auto;
+    text-align: left;
+}
+.direct_pay{
+    width: 100%;
+    /* border: 1px solid blue; */
+    margin: auto;
+    display: flex;
+    /* justify-content: space-around; */
+    gap: 20px;
+}
+.direct_pay>div{
+   width: 18%;
+   cursor: pointer;
+   /* border: 1px solid gray; */
+}
+.direct_pay>div>img{
+    width: 100%;
+
+}
+
+input{
+    border-radius: 3px;
+}
+
+.email{
+    width: 100%;
+    border: 1px solid gray;
+    margin-bottom: 3px;
+    margin-top: 8px;
+    padding: 10px;
+}
+.username_1st_2nd{
+ display: flex;
+ justify-content: space-between;
+}
+.username_1st_2nd>input{
+    width: 48%;
+    border: 1px solid gray;
+    margin-bottom: 3px;
+    padding: 10px;
+}
+.username_contry_pin{
+    display: flex;
+    justify-content: space-between;
+}
+.username_contry_pin>input{
+    width: 29%;
+    border: 1px solid gray;
+    margin-bottom: 3px;
+    margin-top: 8px;
+    padding: 10px;
+}
+.move_forword_div{
+    margin: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.move_forword_div>div>button{
+    padding: 10px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    background-color: rgb(165,42,42);
+}
