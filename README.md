@@ -13,7 +13,11 @@ An e-commerce web site which deals with different types of cloth related product
  <li>1. Express</li>
  <li>1. MongoDB</li>
  
- <h2>Teck Stack:</h2>
+ <h2>Features:</h2>
  
- 
+  <li>Search</li>
+  <li>filter and sorting</li>
+  <li>Add to cart</li>
+  <li>Login/Signup authentication</li>
+  <li>Responsive</li>
 
