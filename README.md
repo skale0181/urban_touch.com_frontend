@@ -25,6 +25,7 @@ An e-commerce web site which deals with different types of cloth related product
 # Some Screen Shorts:
 <h2>Home Page</h2>
 ![UrbanTouchcom](/images/touch_1.png)
+![UrbanOutfitters](/images/touch_1.png)
 <h2>Signup Page</h2>
 ![UrbanTouch.com](/images/touch_signup.png)
 <h2>Login Page</h2>
