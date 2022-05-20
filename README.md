@@ -21,4 +21,5 @@ An e-commerce web site which deals with different types of cloth related product
   <li>Login/Signup authentication</li>
   <li>Responsive</li>
 
-  <img src="/images/touch_1.png"/>
+<!--   <img src="/images/touch_1.png"/> -->
+![UrbanTouch](/images/touch1.png)
