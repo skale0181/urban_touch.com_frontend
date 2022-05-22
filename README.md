@@ -15,7 +15,7 @@ An e-commerce web site which deals with different types of cloth related product
  
  <h2>Features:</h2>
  
-  <li>Search</li>
+  <li>Sliding Images</li>
   <li>filter and sorting</li>
   <li>Add to cart</li>
   <li>Login/Signup authentication</li>
