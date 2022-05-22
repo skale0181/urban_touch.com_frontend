@@ -24,19 +24,19 @@ An e-commerce web site which deals with different types of cloth related product
 <!--   <img src="/images/touch_1.png"/> -->
 # Some Screen Shorts:
 <!-- <h2>Home Page</h2> -->
-![UrbanOutfitters](/images/touch_1.png)
+![Urbantouch](/images/touch_1.png)
 <!-- <h2>Signup Page</h2> -->
-![UrbanOutfitters](/images/touch_signup.png)
+![Urbantouch](/images/touch_signup.png)
 <!-- <h2>Login Page</h2> -->
-![UrbanOutfitters](/images/touch_login.png)
+![Urbantouch](/images/touch_login.png)
 <!-- <h2>Product Page</h2> -->
-![UrbanOutfitters](/images/touch_2nd.png)
+![Urbantouch](/images/touch_2nd.png)
 <!-- <h2>Product Details Page</h2> -->
-![UrbanOutfitters](/images/touch_product.png)
+![Urbantouch](/images/touch_product.png)
 <!-- <h2>Cart Page</h2> -->
-![UrbanOutfitters](/images/touch_cart.png)
+![Urbantouch](/images/touch_cart.png)
 <!-- <h2>Checkout page</h2> -->
-![UrbanOutfitters](/images/touch_checkout.png)
+![Urbantouch](/images/touch_checkout.png)
 <!-- <h2>Payment Page</h2> -->
-![UrbanOutfitters](/images/touch_payment.png)
+![Urbantouch](/images/touch_payment.png)
 
