@@ -25,7 +25,7 @@ export const GiftApparels = () => {
 
   return (
     <div>
-        <h3>Mens-Apparels</h3>
+        <h3>Gifts-Apparels</h3>
         <div style={{display:"flex", alignItems:'center',justifyContent:"space-around", flexWrap:"wrap",marginBottom:"20px" }}>
         {loading ? <div style={{margin:"30px"}}>Loading...</div> : null}
             {products.map((ele,index) => {

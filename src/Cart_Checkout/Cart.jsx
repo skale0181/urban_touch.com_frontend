@@ -20,7 +20,7 @@ export const Cart = () => {
     // dispatch(getCartData(userId))
   };
   const { data, total, loading } = useSelector((store) => store.cart);
-  console.log(data)
+  // console.log(data)
 
   let d_charge;
   if (total > 600 || total == 0) d_charge = 0;
