@@ -42,7 +42,7 @@ export const Cart = () => {
       {(loading && <h4>loading....</h4>) ||
         (!data[0] && (
           <img
-            src="https://sethisbakery.com/assets/website/images/empty-cart.png"
+            src="https://cdni.iconscout.com/illustration/free/thumb/empty-cart-4085814-3385483.png"
             className="empty_cart"
           ></img>
         ))}
@@ -91,7 +91,7 @@ export const Cart = () => {
         <div>
           <div className="location" id="loc">
             <div className="summary">
-              <p>Order summary</p>
+              <h3>Order summary</h3>
             </div>
             <div className="main1">
               <div id="stotal">Cart Sub Total:</div>
@@ -114,7 +114,7 @@ export const Cart = () => {
             <div className="main1">
               <div id="stotal">Total Cart Amount:</div>
               <div className="amount" id="tcAmount">
-                ₹{total + d_charge + (total / 100) * 12}.00
+                ₹{total + d_charge + (total / 100) * 12}{total?null:".00"}
               </div>
             </div>
             <div className="main">
