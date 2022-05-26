@@ -128,7 +128,7 @@ const Navbar = () => {
             variant="h6"
             noWrap
             component="a"
-            href="/"
+            onClick={()=>navigate("/")}
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
@@ -138,9 +138,10 @@ const Navbar = () => {
               color: 'inherit',
               textDecoration: 'none',
               // backgroundColor: 'gray',
-              color: 'gold',
+               color: 'gold',
                 borderRadius: '0.25rem',
                 padding: '0.25rem',
+                cursor:"pointer"
             }}
           >
             URBANTOUCH.COM

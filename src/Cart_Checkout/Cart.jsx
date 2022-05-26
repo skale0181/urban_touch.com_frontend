@@ -7,26 +7,20 @@ import "./Cart.css";
 export const Cart = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const [change, setChange] = useState(0);
 
   const { token, name, userId } = useSelector((state) => state.login);
 
   useEffect(() => {
     dispatch(getCartData(userId));
-  }, [change]);
+  }, []);
 
-  // const expencivedata = (data)=>{
-  //   return data
-  // }
-  // data = useMemo(()=>expencivedata(data), [data])
 
   const handleremove = (id) => {
     dispatch(removeCartItem(id));
     // dispatch(getCartData(userId))
-    setChange(change + 1);
   };
-  let { data, total, loading } = useSelector((store) => store.cart);
-  // console.log(data)
+  const { data, total, loading } = useSelector((store) => store.cart);
+  console.log(data)
 
   let d_charge;
   if (total > 600 || total == 0) d_charge = 0;

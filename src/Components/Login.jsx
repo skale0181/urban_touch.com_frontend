@@ -26,7 +26,6 @@ margin-bottom: 20px;
 
 export const Login = () => {
   const [email, setEmail] = React.useState("");
-  const [name, setName] = React.useState("");
   const [password, setPassword] = React.useState("");
   const dispatch = useDispatch();
   const navigate = useNavigate()
