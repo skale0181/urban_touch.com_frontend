@@ -13,6 +13,7 @@ import {
   loadingmens,
   errormens,
   getMensData,
+  getMensFilterData
 } from "../../Redux/Mens/action";
 import { useNavigate } from "react-router-dom";
 
@@ -26,12 +27,12 @@ function Mens() {
   const products = useSelector((store) => store.mens.data);
   const {loading, error} = useSelector((store) => store.mens);
   
- 
-
+  
   useEffect(() => {
     dispatch(getMensData());
   }, []);
 
+  
   // console.log(products)
   // ------------sorting and filter functionality-----------------//
   const handleChangeprice = (val) => {
@@ -70,23 +71,22 @@ function Mens() {
       const x = products.filter((item) => {
         return item.price <= 100;
       });
-      // console.log(x);
-      // setData([...x])
-      dispatch(getmens(x));
+      dispatch(getMensFilterData(1));
     } else if (val === 2) {
       const x = products.filter((item) => {
         return item.price > 100 && item.price <= 300;
       });
-      // console.log(x);
-      // setData([...x])
-      dispatch(getmens(x));
+      dispatch(getMensFilterData(2));
     } else if (val === 3) {
       const x = products.filter((item) => {
         return item.price >= 300;
       });
-      // console.log(x);
-      // setData([...x])
-      dispatch(getmens(x));
+      dispatch(getMensFilterData(3));
+    }else if (val === 4) {
+      const x = products.filter((item) => {
+        return item.price >= 300;
+      });
+      dispatch(getMensFilterData(4));
     }
   };
 
@@ -137,7 +137,7 @@ function Mens() {
               </FormControl>
             </Box>
           </div>
-          {/* <div className="schild">
+          <div className="schild">
             <Box sx={{ minWidth: 120 }}>
               <FormControl fullWidth>
                 <InputLabel id="demo-simple-select-label">
@@ -150,12 +150,13 @@ function Mens() {
                   onChange={(e) => handlefilter(e.target.value)}
                 >
                   <MenuItem value={1}>Below 100</MenuItem>
-                  <MenuItem value={2}>Bbetween 100-300 </MenuItem>
-                  <MenuItem value={3}>Above 300</MenuItem>
+                  <MenuItem value={2}>Between 100-300 </MenuItem>
+                  <MenuItem value={3}>Between 300-500</MenuItem>
+                  <MenuItem value={4}>Abow 500</MenuItem>
                 </Select>
               </FormControl>
             </Box>
-          </div> */}
+          </div>
         </div>
         {products.map((ele, index) => {
           let temp = ele.image1;
