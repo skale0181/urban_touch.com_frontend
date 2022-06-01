@@ -9,6 +9,7 @@ export const FrontCrousel = () => {
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
   </div>
   <div className="carousel-inner">
     <div className="carousel-item active">
@@ -19,6 +20,9 @@ export const FrontCrousel = () => {
     </div>
     <div className="carousel-item">
       <img src="https://i.pinimg.com/originals/28/be/1c/28be1c01d38b6da0e4c42c1952fa28f0.jpg" className="d-block w-100" alt=""/>
+    </div>
+    <div className="carousel-item">
+      <img src="https://img1.goodfon.com/wallpaper/nbig/d/16/joseph-morgan-muzhchina-smoking.jpg" className="d-block w-100" alt=""/>
     </div>
   </div>
   <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">

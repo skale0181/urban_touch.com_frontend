@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
-import { getCartData } from "../../Redux/Cart/action";
+import { getCartData, updateCartItem } from "../../Redux/Cart/action";
 import { getMensData } from "../../Redux/Mens/action";
 
 import "./Product.css";
@@ -122,11 +122,47 @@ export const Product = () => {
 
   const {token, name,userId} = useSelector(state=>state.login)
   // console.log(userId)
+  
+  // for checking item is already in cart or not
+const [confirm, setConfirm] = useState(false)
+const [change, setChange] = useState(0)
+const [alredy, setAlredy] = useState({})
+  useEffect(()=>{
+    axios.get(`https://urban-touch-0181.herokuapp.com/cart/${id}`)
+    .then(res=>{
+      setConfirm(true)
+      setAlredy(...res.data)
+      // console.log(alredy)
+      // console.log(change)
+    })
+    .catch(err=>{
+      // console.log(err)
+    })
+  },[change])
 
   const addToCart = () => {
+   
+    const cartItem = {
+      name:item.name,
+      description: item,
+      image1:item.image1,
+      image2:item.image2,
+      discount:item.discount,
+      price: alredy.price+item.price*item_no,
+      number_of_items: alredy.number_of_items + item_no,
+      size: size,
+      user_id:userId,
+      item_id:id,
+    }
     if(!token){
       alert("Please Login to add to cart")
       navigate("/login")
+    }
+  
+  
+    else if(confirm){
+      dispatch(updateCartItem(cartItem,id))
+      alert("Item updated to cart")
     }
     else{
     const payload = {
@@ -138,7 +174,8 @@ export const Product = () => {
       price: item.price*item_no,
       number_of_items: item_no,
       size: size,
-      user_id:userId
+      user_id:userId,
+      item_id:id,
     };
     // console.log(payload)
    
@@ -277,7 +314,9 @@ export const Product = () => {
               <button
                 className="add_to_cart_btn"
                 onClick={() => {
+                  setChange(change+1)
                   addToCart();
+                  setConfirm(true)
                 }}
               >
                 ADD TO CART
