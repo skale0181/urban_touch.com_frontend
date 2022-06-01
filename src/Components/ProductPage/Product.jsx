@@ -18,7 +18,7 @@ export const Product = () => {
      axios.get(`https://urban-touch-0181.herokuapp.com/mennapparel`)
        .then(res => {
             setAparel1([...res.data])
-            console.log(res.data)
+            // console.log(res.data)
           })
           .catch(err => {
               console.log(err)
