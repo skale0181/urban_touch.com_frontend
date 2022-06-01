@@ -9,17 +9,17 @@ export const Cart = () => {
   const dispatch = useDispatch();
 
   const { token, name, userId } = useSelector((state) => state.login);
-
+  const { data, total, loading } = useSelector((store) => store.cart);
+  
   useEffect(() => {
     dispatch(getCartData(userId));
   }, []);
-
+  
 
   const handleremove = (id) => {
-    dispatch(removeCartItem(id));
+    dispatch(removeCartItem(id,userId));
     // dispatch(getCartData(userId))
   };
-  const { data, total, loading } = useSelector((store) => store.cart);
   // console.log(data)
 
   let d_charge;
