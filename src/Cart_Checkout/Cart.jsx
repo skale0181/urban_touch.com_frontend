@@ -39,7 +39,7 @@ export const Cart = () => {
   return (
     <div>
       <h2>Cart</h2>
-      {(loading && <h4>loading....</h4>) ||
+      {(loading && <img src="https://hackernoon.com/images/0*4Gzjgh9Y7Gu8KEtZ.gif" className="loading_cart"/>) ||
         (!data[0] && (
           <img
             src="https://cdni.iconscout.com/illustration/free/thumb/empty-cart-4085814-3385483.png"
@@ -67,7 +67,7 @@ export const Cart = () => {
                         className="img_item_cart"
                         src={el.image1}
                         onClick={() => {
-                          navigate(`/product/${el._id}`);
+                          navigate(`/product/${el.item_id}`);
                         }}
                       />
                     </td>
