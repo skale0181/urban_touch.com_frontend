@@ -41,12 +41,13 @@ export const getCartData = (user_id) => {
     }
 }
 
-export const removeCartItem = (_id)=>{
+export const removeCartItem = (_id,user_id)=>{
     return (dispatch) => {
         dispatch(loadingCart());
         axios.delete(`https://urban-touch-0181.herokuapp.com/cart/${_id}`)
         .then(res => {
-            dispatch(getCartData())
+            // dispatch(getCartData())
+            dispatch(getCartData(user_id))
         }
         )
         .catch(err => {console.log(err)}
