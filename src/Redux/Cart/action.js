@@ -43,7 +43,6 @@ export const getCartData = (user_id) => {
 
 export const removeCartItem = (_id,user_id)=>{
     return (dispatch) => {
-        dispatch(loadingCart());
         axios.delete(`https://urban-touch-0181.herokuapp.com/cart/${_id}`)
         .then(res => {
             // dispatch(getCartData())
@@ -57,13 +56,24 @@ export const removeCartItem = (_id,user_id)=>{
 
 export const removeUserCartItems = (user_id)=>{
     return (dispatch) => {
-        dispatch(loadingCart());
         axios.delete(`https://urban-touch-0181.herokuapp.com/cart/${user_id}`)
         .then(res => {
             dispatch(getCartData())
         }
         )
         .catch(err => {console.log(err)}
+        )
+    }
+}
+
+export const updateCartItem = (cartItem,item_id)=>{
+    return (dispatch) => {
+        axios.put(`https://urban-touch-0181.herokuapp.com/cart/${item_id}`,cartItem)
+        .then(res => {  
+        })
+        .catch(err => {
+            console.log(err)
+        }
         )
     }
 }
