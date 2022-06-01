@@ -38,3 +38,27 @@ export const getWomensData = () => {
                 )
         }
 }
+export const getWomensFilterData = (x) => {
+        return (dispatch) => {
+                dispatch(loadingwomens());
+                axios.get(`https://urban-touch-0181.herokuapp.com/womens`)
+                .then(res => {
+
+                        if(x==1){
+                                dispatch(getwomens(res.data.filter(y => y.price < 100)))
+                        }
+                        else if(x==2){
+                                dispatch(getwomens(res.data.filter(y => y.price >= 100 && y.price < 300)))
+                        }
+                        else if(x==3){
+                                dispatch(getwomens(res.data.filter(y => y.price >= 300 && y.price < 500)))
+                        }
+                        else if(x==4){
+                                dispatch(getwomens(res.data.filter(y => y.price >= 500)))
+                        }
+                }
+                )
+                .catch(err => {dispatch(errorwomens(err))}
+                )
+        }
+}

@@ -39,3 +39,27 @@ export const getKidsData = () => {
                 )
         }
 }
+export const getKidsFilterData = (x) => {
+        return (dispatch) => {
+                dispatch(loadingKids());
+                axios.get(`https://urban-touch-0181.herokuapp.com/kids`)
+                .then(res => {
+
+                        if(x==1){
+                                dispatch(getKids(res.data.filter(y => y.price < 100)))
+                        }
+                        else if(x==2){
+                                dispatch(getKids(res.data.filter(y => y.price >= 100 && y.price < 300)))
+                        }
+                        else if(x==3){
+                                dispatch(getKids(res.data.filter(y => y.price >= 300 && y.price < 500)))
+                        }
+                        else if(x==4){
+                                dispatch(getKids(res.data.filter(y => y.price >= 500)))
+                        }
+                }
+                )
+                .catch(err => {dispatch(errorKids(err))}
+                )
+        }
+}
