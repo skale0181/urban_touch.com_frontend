@@ -32,7 +32,7 @@ export const Footer = () => {
           <hr />
           <div className="input_join">
             <input type="text" placeholder="your email-example@gmai.com" style={{ border: "none" }} />
-            <button>Join</button>
+            <button style={{color:"black"}}>Join</button>
           </div>
         </div>
       </div>
