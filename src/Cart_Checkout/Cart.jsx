@@ -8,6 +8,25 @@ export const Cart = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
+  const [coupen, setCoupen] = useState("");
+  const [coupen_amount, setCoupen_amount] = useState(0);
+
+const applycoupan=()=>{
+  if(coupen_amount>0){
+     alert("coupen already applied")
+  }
+  else if(coupen==="SK0181" || coupen==="SK2405"){
+    alert("coupen applied")
+    setCoupen_amount(35)
+  }
+  else if(coupen==="SK0182" || coupen==="SK2406"){
+    alert("coupen applied")
+    setCoupen_amount(50)
+  }
+  else{
+    alert("invalid coupen")
+  }
+}
   const { token, name, userId } = useSelector((state) => state.login);
   const { data, total, loading } = useSelector((store) => store.cart);
   
@@ -29,10 +48,15 @@ export const Cart = () => {
   const gst = (total * 12) / 100;
 
   const handlecontinue = () => {
-    if (token) navigate("/checkout");
-    else{
+    if (!token){
       alert("Please Login First")
       navigate("/login");
+    } 
+    else if(data.length==0){
+      alert("No Item in Cart")
+    }
+    else{
+      navigate("/checkout");
     } 
   };
 
@@ -102,19 +126,25 @@ export const Cart = () => {
             <div className="main1">
               <div id="stotal">Estimated Delivery Charges: </div>
               <div className="amount" id="edcAmount">
-                {total > 600 || total == 0 ? "₹00.00" : "₹60.00"}
+                {total > 600 || total == 0 ? "FREE" : "+ ₹60.00"}
               </div>
             </div>
             <div className="main1">
               <div id="stotal">GST 12% </div>
               <div className="amount" id="gstAmount">
-                ₹{gst % 1 == 0 ? gst + ".00" : gst.toFixed(2)}
+                 {gst % 1 == 0 ?"₹"+ gst + ".00" :"+ ₹"+ gst.toFixed(2)}
               </div>
             </div>
+            {coupen_amount>0 && <div className="main1">
+              <div id="stotal">Aplied Coupen</div>
+              <div className="amount" id="gstAmount">
+               - ₹{coupen_amount}
+              </div>
+            </div>}
             <div className="main1">
               <div id="stotal">Total Cart Amount:</div>
               <div className="amount" id="tcAmount">
-                ₹{total + d_charge + (total / 100) * 12}{total?null:".00"}
+                ₹{total - coupen_amount + d_charge + (total / 100) * 12}{total?null:".00"}
               </div>
             </div>
             <div className="main">
@@ -131,8 +161,8 @@ export const Cart = () => {
             <div className="box2">
               <h4>Use your voucher code</h4>
               <p>Only one coupon code can be used per order at this time.</p>
-              <input type="text" id="coupen" />
-              <button id="apply" className="clickn_PROMO">
+              <input type="text" onChange={(e)=>setCoupen(e.target.value)} id="coupen" />
+              <button id="apply" onClick={()=>applycoupan()} className="clickn_PROMO">
                 APPLY
               </button>
             </div>
