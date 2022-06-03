@@ -15,6 +15,7 @@ import { Payment } from "./Cart_Checkout/Payment";
 import { Signup } from "./Components/Signup";
 import { Login } from "./Components/Login";
 import GiftCards from "../src/Components/ProductPage/GiftCards";
+import LastInfo from "./Cart_Checkout/LastInfo";
 
 function App() {
   return (
@@ -54,6 +55,7 @@ function App() {
         <Route path="/payment" element={<Payment />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/order-summary" element={<LastInfo />} />
       </Routes>
       <Footer />
     </div>
