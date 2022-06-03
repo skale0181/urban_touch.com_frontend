@@ -140,6 +140,10 @@ const [alredy, setAlredy] = useState({})
     })
   },[change])
 
+  useEffect(()=>{
+    setChange(change+1)
+  },[])
+
   const addToCart = () => {
    
     const cartItem = {
@@ -218,7 +222,7 @@ const [alredy, setAlredy] = useState({})
               <br />
               <button
                 className="size_btn"
-                style={{ backgroundColor: btn_color1 }}
+                style={{ backgroundColor: btn_color1, color: "black" }}
                 onClick={() => {
                   setSize("S");
                   {
@@ -242,7 +246,7 @@ const [alredy, setAlredy] = useState({})
               </button>
               <button
                 className="size_btn"
-                style={{ backgroundColor: btn_color2 }}
+                style={{ backgroundColor: btn_color2, color: "black"  }}
                 onClick={() => {
                   setSize("M");
                   {
@@ -266,7 +270,7 @@ const [alredy, setAlredy] = useState({})
               </button>
               <button
                 className="size_btn"
-                style={{ backgroundColor: btn_color3 }}
+                style={{ backgroundColor: btn_color3, color: "black"  }}
                 onClick={() => {
                   setSize("L");
                   {
@@ -295,6 +299,7 @@ const [alredy, setAlredy] = useState({})
               <div className="item_inc_dec">
                 <button
                   className="item__btn"
+                  style={{ color: "black" }}
                   onClick={() =>
                     item_no >= 2 ? setItemNo((pre) => pre - 1) : setItemNo(1)
                   }
@@ -303,6 +308,7 @@ const [alredy, setAlredy] = useState({})
                 </button>
                 <span>{item_no}</span>
                 <button
+                 style={{ color: "black" }}
                   className="item__btn"
                   onClick={() => setItemNo((pre) => pre + 1)}
                 >
@@ -316,7 +322,7 @@ const [alredy, setAlredy] = useState({})
                 onClick={() => {
                   setChange(change+1)
                   addToCart();
-                  setConfirm(true)
+                  // setConfirm(true)
                 }}
               >
                 ADD TO CART
