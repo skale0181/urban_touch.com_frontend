@@ -21,9 +21,9 @@ An e-commerce web site which deals with different types of cloth related product
   <li>Login/Signup authentication</li>
   <li>Responsive</li>
   <li>Able to apply coupen code</li>
-    1.SK0181 -> ₹35
-    2.SK0182 -> ₹50
-    3.SK2405 -> ₹35
+    1.SK0181 -> ₹35, 
+    2.SK0182 -> ₹50, 
+    3.SK2405 -> ₹35, 
     4.SK2406 -> ₹50
 
 <!--   <img src="/images/touch_1.png"/> -->
