@@ -1,11 +1,14 @@
 
 import { SIGNUP_LOADING,SIGNUP_SUCCESS, SIGNUP_FAILURE  } from "./action";
 
+//get token fromm local storege;
+// const user_token = localStorage.getItems("urbam_use_token");
 
 const initialState = {
     loading :false,
     error:false,
     isauthenticated:false
+//     isauthenticated:user_token?true:false
 }
 
 
@@ -18,7 +21,7 @@ export const signupreducer = (store=initialState,{type,payload})=>{
         case SIGNUP_FAILURE:
             return {...store,loading:false, error:true,isauthenticated:false}
         case "LOGOUT2":
-                return {...initialState}
+                return {...initialState,isauthenticated:false}
         default:
             return store
     }
