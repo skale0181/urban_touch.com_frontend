@@ -35,6 +35,8 @@ export const signup =(payload)=> (dispatch) => {
     }).then(res => res.json())
         .then((res) => {
             dispatch(signupsuccess({token:res.token}))
+         //store token to local;
+         // localStorege.setItems("urbam_use_token",res.token);
             // console.log(res)
         })
         .catch((err) => {dispatch(signupfailure(err))
