@@ -36,7 +36,7 @@ export const signup =(payload)=> (dispatch) => {
         .then((res) => {
             dispatch(signupsuccess({token:res.token}))
          //store token to local;
-         // localStorege.setItems("urbam_use_token",res.token);
+         localStorage.setItem("urban_use_token", JSON.stringify({token:res.token}))
             // console.log(res)
         })
         .catch((err) => {dispatch(signupfailure(err))

@@ -32,6 +32,11 @@ export const login =({email,password})=> (dispatch) => {
             'Content-Type': 'application/json'
         }
     }).then(res => res.json())
-        .then(res => dispatch(loginSuccess({userId:res.user._id,name:res.user.name,token:res.token})))
+        .then((res) =>{
+            ///set user details to local storage;
+                   localStorage.setItem("urban_use_token", JSON.stringify({token:res.token,userId:res.user._id,name:res.user.name}))
+                   dispatch(loginSuccess({userId:res.user._id,name:res.user.name,token:res.token}))
+               }
+             )
         .catch(err => dispatch(loginFailure(err)))
 }

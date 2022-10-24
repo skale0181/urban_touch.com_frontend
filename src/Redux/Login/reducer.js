@@ -1,12 +1,18 @@
 import { LOGIN_FAILURE,LOGIN_SUCCESS,LOGIN_LOADING } from "./action";
+  
+//get token from local storage;
+ const user = JSON.parse(localStorage.getItem("urban_use_token"));
+ const userId = user?.userId?user.userId:"";
+ const name = user?.name?user.name:"";
+ const token = user?.token?user.token:"";
 
 const initialState = {
     loading: false,
     error: false,
-    isAuthenticated: false,
-    token:"",
-    userId:"",
-    name:""
+    isAuthenticated:token?true:false,
+    token:token?token:"",
+    userId:userId?userId:"",
+    name:name?name:""
 };
 
 
@@ -39,7 +45,8 @@ export const loginReducer = (store=initialState, {type,payload}) => {
                 name: "",
             };
         case "LOGOUT":
-            return {...initialState}
+            localStorage.setItem("urban_use_token",JSON.stringify({}));
+            return {...initialState,token:"",userId:"",name:"", isAuthenticated:false}
         default:
             return store;
     }
