@@ -6,7 +6,6 @@ import styled from "styled-components";
 import Button from '@mui/material/Button';
 import "./Login.css";
 import { logout2 } from "../Redux/Signup/action";
-
 const LoginBox = styled.div`
 width: 450px;
 height: 300px%;
@@ -49,7 +48,6 @@ export const Login = () => {
 
   const disabled = email.length === 0 || password.length === 0 
 
-  console.log("jjj", process.env.SERVER_URBANTOUCH_API);
   return (
     <LoginBox>
       <div >
