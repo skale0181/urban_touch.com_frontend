@@ -1,4 +1,5 @@
 import axios from "axios";
+import { CART } from "../../Api_helper/api_helper";
 
 export  const GET_CART = 'GET_CART';
 export const LODDING_CART = 'LODDING_CART';
@@ -30,7 +31,7 @@ export const errorCart = (payload) => ({
 export const getCartData = (user_id) => {
     return (dispatch) => {
             dispatch(loadingCart());
-            axios.get(`https://urban-touch-0181.herokuapp.com/cart/${user_id}`)
+            axios.get(`${CART}${user_id}`)
             .then(res => {
               dispatch(getCart(res.data))
             //   console.log(res.data)
@@ -43,7 +44,7 @@ export const getCartData = (user_id) => {
 
 export const removeCartItem = (_id,user_id)=>{
     return (dispatch) => {
-        axios.delete(`https://urban-touch-0181.herokuapp.com/cart/${_id}`)
+        axios.delete(`${CART}${_id}`)
         .then(res => {
             // dispatch(getCartData())
             dispatch(getCartData(user_id))
@@ -56,7 +57,7 @@ export const removeCartItem = (_id,user_id)=>{
 
 export const removeUserCartItems = (user_id)=>{
     return (dispatch) => {
-        axios.delete(`https://urban-touch-0181.herokuapp.com/cart/${user_id}`)
+        axios.delete(`${CART}${user_id}`)
         .then(res => {
             dispatch(getCartData())
         }
@@ -68,7 +69,7 @@ export const removeUserCartItems = (user_id)=>{
 
 export const updateCartItem = (cartItem,item_id)=>{
     return (dispatch) => {
-        axios.put(`https://urban-touch-0181.herokuapp.com/cart/${item_id}`,cartItem)
+        axios.put(`${CART}${item_id}`,cartItem)
         .then(res => {  
         })
         .catch(err => {

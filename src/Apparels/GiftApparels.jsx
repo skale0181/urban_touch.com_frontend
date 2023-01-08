@@ -2,6 +2,7 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import "./MensApparel.css"
 import { useNavigate } from 'react-router-dom'
+import { GIFT_APPARELS_FRONT } from '../Api_helper/api_helper'
 
 export const GiftApparels = () => {
     const [products, setProducts] = useState([])
@@ -10,7 +11,7 @@ export const GiftApparels = () => {
 
     useEffect(() => {
       setLoading(true)
-       axios.get(`https://urban-touch-0181.herokuapp.com/giftapparel`)
+       axios.get(GIFT_APPARELS_FRONT)
          .then(res => {
               setProducts(res.data)
               setLoading(false)

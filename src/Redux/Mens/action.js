@@ -1,4 +1,5 @@
 import axios from "axios";
+import { MENS_APPARELS } from "../../Api_helper/api_helper";
 
 export  const GET_MENS = 'GET_MENS';
 export const LODDING_MENS = 'LODDING_MENS';
@@ -28,7 +29,7 @@ export const errormens = (payload) => ({
 export const getMensData = () => {
         return (dispatch) => {
                 dispatch(loadingmens());
-                axios.get(`https://urban-touch-0181.herokuapp.com/mens`)
+                axios.get(MENS_APPARELS)
                 .then(res => {
                   dispatch(getmens(res.data))
                 //   console.log(res.data)
@@ -42,7 +43,7 @@ export const getMensData = () => {
 export const getMensFilterData = (x) => {
         return (dispatch) => {
                 dispatch(loadingmens());
-                axios.get(`https://urban-touch-0181.herokuapp.com/mens`)
+                axios.get(MENS_APPARELS)
                 .then(res => {
 
                         if(x==1){

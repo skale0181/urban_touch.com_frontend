@@ -47,10 +47,9 @@ export const Login = () => {
     navigate("/");
   }
 
-
-
   const disabled = email.length === 0 || password.length === 0 
 
+  console.log("jjj", process.env.SERVER_URBANTOUCH_API);
   return (
     <LoginBox>
       <div >

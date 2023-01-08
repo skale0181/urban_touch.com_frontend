@@ -1,4 +1,5 @@
 import axios from "axios";
+import { KIDS_APPARELS } from "../../Api_helper/api_helper";
 
 export  const GET_KIDS = 'GET_KIDS';
 export const LODDING_KIDS = 'LODDING_KIDS';
@@ -29,7 +30,7 @@ export const errorKids = (payload) => ({
 export const getKidsData = () => {
         return (dispatch) => {
                 dispatch(loadingKids());
-                axios.get(`https://urban-touch-0181.herokuapp.com/kids`)
+                axios.get(KIDS_APPARELS)
                 .then(res => {
                   dispatch(getKids(res.data))
                 //   console.log(res.data)
@@ -42,7 +43,7 @@ export const getKidsData = () => {
 export const getKidsFilterData = (x) => {
         return (dispatch) => {
                 dispatch(loadingKids());
-                axios.get(`https://urban-touch-0181.herokuapp.com/kids`)
+                axios.get(KIDS_APPARELS)
                 .then(res => {
 
                         if(x==1){

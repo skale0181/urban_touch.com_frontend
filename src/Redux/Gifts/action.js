@@ -1,4 +1,5 @@
 import axios from "axios";
+import { GIFT_APPARELS } from "../../Api_helper/api_helper";
 
 export  const GET_GIFTS = 'GET_GIFTS';
 export const LODDING_GIFTS = 'LODDING_GIFTS';
@@ -28,7 +29,7 @@ export const errorGIFTS = (payload) => ({
 export const getGIFTSData = () => {
         return (dispatch) => {
                 dispatch(loadingGIFTS());
-                axios.get(`https://urban-touch-0181.herokuapp.com/gifts`)
+                axios.get(GIFT_APPARELS)
                 .then(res => {
                   dispatch(getGIFTS(res.data))
                 //   console.log(res.data)
@@ -41,7 +42,7 @@ export const getGIFTSData = () => {
 export const getGiftsFilterData = (x) => {
         return (dispatch) => {
                 dispatch(loadingGIFTS());
-                axios.get(`https://urban-touch-0181.herokuapp.com/gifts`)
+                axios.get(GIFT_APPARELS)
                 .then(res => {
 
                         if(x==1){

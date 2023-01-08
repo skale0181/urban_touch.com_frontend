@@ -1,3 +1,5 @@
+import { REGISTER } from "../../Api_helper/api_helper";
+
 //action type
 export const SIGNUP_LOADING = "SIGNUP_LOADING";
 export const SIGNUP_SUCCESS = "SIGNUP_SUCCESS";
@@ -26,7 +28,7 @@ export const logout2 = () => ({
 export const signup =(payload)=> (dispatch) => {
     
     dispatch(signuploading())
-    fetch('https://urban-touch-0181.herokuapp.com/register', {
+    fetch(REGISTER, {
         method: 'POST',
         body: JSON.stringify(payload),
         headers: {
