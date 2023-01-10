@@ -82,7 +82,7 @@ const Navbar = () => {
   let navigate = useNavigate();
   const dispatch = useDispatch()
   const {token,name} = useSelector(state => state.login);
-
+  console.log("jjjj", token)
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 

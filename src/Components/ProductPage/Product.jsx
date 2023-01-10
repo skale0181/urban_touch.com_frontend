@@ -1,7 +1,9 @@
+import { Token } from "@mui/icons-material";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
+import { CART, GIFT_APPARELS_FRONT, KIDS_APPARELS_FRONT, MENS_APPARELS_FRONT, WOMEN_APPARELS_FRONT } from "../../Api_helper/api_helper";
 import { getCartData, updateCartItem } from "../../Redux/Cart/action";
 import { getMensData } from "../../Redux/Mens/action";
 
@@ -15,7 +17,7 @@ export const Product = () => {
   const [aparel3, setAparel3] = useState([])
   const [aparel4, setAparel4] = useState([])
   useEffect(() => {
-     axios.get(`https://urban-touch-0181.herokuapp.com/mennapparel`)
+     axios.get(MENS_APPARELS_FRONT)
        .then(res => {
             setAparel1([...res.data])
             // console.log(res.data)
@@ -24,7 +26,7 @@ export const Product = () => {
               console.log(err)
           }
       )
-     axios.get(`https://urban-touch-0181.herokuapp.com/womennapparel`)
+     axios.get(WOMEN_APPARELS_FRONT)
        .then(res => {
             setAparel2([...res.data])
             // console.log(res.data)
@@ -33,7 +35,7 @@ export const Product = () => {
               console.log(err)
           }
       )
-     axios.get(`https://urban-touch-0181.herokuapp.com/kidapparel`)
+     axios.get(KIDS_APPARELS_FRONT)
        .then(res => {
             setAparel3([...res.data])
             // console.log(res.data)
@@ -42,7 +44,7 @@ export const Product = () => {
               console.log(err)
           }
       )
-      axios.get(`https://urban-touch-0181.herokuapp.com/giftapparel`)  
+      axios.get(GIFT_APPARELS_FRONT)  
       .then(res => {
         setAparel4([...res.data])
         // console.log(res.data)
@@ -120,19 +122,21 @@ export const Product = () => {
   else if (aparel4_item_filter[0]) item = aparel4_item_filter[0];
 
 
-  const {token, name,userId} = useSelector(state=>state.login)
-  // console.log(userId)
+  const {token,name, userId} = useSelector(state => state.login);
+  console.log( "jjjjjjjjjjjjjjjjj",token,name)
   
   // for checking item is already in cart or not
 const [confirm, setConfirm] = useState(false)
 const [change, setChange] = useState(0)
 const [alredy, setAlredy] = useState({})
   useEffect(()=>{
-    axios.get(`https://urban-touch-0181.herokuapp.com/cart/${id}`)
+    axios.get(`${CART}${id}`)
     .then(res=>{
-      setConfirm(true)
-      setAlredy(...res.data)
-      // console.log(alredy)
+      if(res.data.length!==0){
+        setConfirm(true)
+        setAlredy(...res.data)
+      }
+      console.log(res)
       // console.log(change)
     })
     .catch(err=>{
@@ -165,6 +169,7 @@ const [alredy, setAlredy] = useState({})
   
   
     else if(confirm){
+      console.log("data",cartItem)
       dispatch(updateCartItem(cartItem,id))
       alert("Item updated to cart")
     }
@@ -184,7 +189,7 @@ const [alredy, setAlredy] = useState({})
     // console.log(payload)
    
     axios
-      .post("https://urban-touch-0181.herokuapp.com/cart", payload)
+      .post(CART, payload)
       .then((res) => {
         // console.log(res.data);
       })
@@ -214,7 +219,7 @@ const [alredy, setAlredy] = useState({})
               <br />
               <br />
               <p>
-                Pay in 4 interest-free installments of ₹18.00 with Googlepay
+                Pay in 4 interest-free installments of ₹18.00 with Google pay
               </p>
 
               <span>SIZE |</span>
