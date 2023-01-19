@@ -8,7 +8,7 @@ An e-commerce web site which deals with different types of cloth related product
 <li>2. Material UI</li>
 <li>3. Bootsrap </li>
 
- <h3>A. Front-End</h3>
+ <h3>A. Back-End</h3>
  <li>1. Node JS</li>
  <li>1. Express</li>
  <li>1. MongoDB</li>
