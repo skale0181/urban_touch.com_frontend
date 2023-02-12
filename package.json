@@ -1,5 +1,4 @@
 {
-  "homepage": "https://skale0181.github.io/urban_touch.com_frontend",
   "name": "urban_touch.com",
   "version": "0.1.0",
   "private": true,
@@ -29,8 +28,6 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "json": "json-server --watch db.json --port 8080",
     "build": "react-scripts build",
     "test": "react-scripts test",
